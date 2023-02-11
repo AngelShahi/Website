@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/79165672ef.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--Header start-->
+  <div id="About">
+    <div class="container">
+        <nav>
+            <img src="image/Logo.png"class="logo">
+            <ul id="sidemenu">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Reference.html">References</a></li>
+                <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+  </div>
+  <!--Header finish-->
+  <!--About Section start-->  
+  <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="image/About.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello I am Angel Shahi and I am a student at Herald College Kathmandu which is the affiliation of University of Wolverhampton and I am currently studying BSC(Hons)Computing.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links"onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Ms Word</span><br>Doing presentation</li>
+                    <li><span>Python</span><br>Build websites</li>
+                    <li><span>Java</span><br>Construct application</li>
+            </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Typing course</span><br>Youtube</li>
+                    <li><span>Django course</span><br>Kantipur institue Nepal</li>
+                    <li><span>Professional python course</span><br>Kantipur institute Nepal</li>
+            </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2022-current</span><br>BSC(Hons)Computing</li>
+                    <li><span>2020-2022</span><br>Plus 2</li>
+                    <li><span>2017-2020</span><br>SEE</li>
+            </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
